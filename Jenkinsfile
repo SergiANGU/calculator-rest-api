@@ -10,6 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 git 'https://github.com/SergiANGU/calculator-rest-api.git'
+                sh "chmod 777 ${env.stage}"
                 sh './mvnw clean compile'
                 // bat '.\\mvnw clean compile'
             }
