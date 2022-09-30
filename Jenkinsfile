@@ -7,34 +7,36 @@ pipeline {
         stage('Build') {
             steps {
                 git 'https://github.com/SergiANGU/calculator-rest-api.git'
-                sh './mvnw clean compile'
+                //sh './mvnw clean compile'
                 // bat '.\\mvnw clean compile'
             }
         }
-        stage('Test') {
-            steps {
-                sh "chmod 777 ${env.stage}"
-                sh './mvnw test'
+
+//        stage('Test') {
+//            steps {
+//                sh "chmod 777 ${env.stage}"
+//                sh './mvnw test'
 
                 // bat '.\\mvnw test'
-            }
+//            }
 
-            post {
-                always {
-                junit '**/target/surefire-reports/TEST-*.xml'
-                }
-            }
-        }
-        stage('Publish') {
-            steps {
-                sh './mvnw package'
+//            post {
+//                always {
+//                junit '**/target/surefire-reports/TEST-*.xml'
+//                }
+//            }
+//        }
+//        stage('Publish') {
+//            steps {
+//                sh './mvnw package'
                 // bat '.\\mvnw package'
-            }
-            post {
-                success {
-                    archiveArtifacts 'target/*.jar'
-                }
-            }
-        }
+//            }
+//            post {
+//                success {
+//                    archiveArtifacts 'target/*.jar'
+//                }
+//            }
+//        }
+
     }
 }
