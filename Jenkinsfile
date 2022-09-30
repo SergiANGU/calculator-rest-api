@@ -6,15 +6,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                git 'https://github.com/SergiANGU/calculator-rest-api'
+                git 'https://github.com/SergiANGU/calculator-rest-api.git'
                 sh './mvnw clean compile'
-
                 // bat '.\\mvnw clean compile'
             }
         }
         stage('Test') {
             steps {
-                sh './mvnw test'
+                sh 'sudo ./mvnw test'
                 // bat '.\\mvnw test'
             }
 
