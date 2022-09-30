@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'sudo ./mvnw test'
+                sh './mvnw test'
                 // bat '.\\mvnw test'
             }
 
