@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh "chmod +x -R ${env.stage}"
+                sh "chmod 777 ${env.stage}"
                 sh './mvnw test'
 
                 // bat '.\\mvnw test'
