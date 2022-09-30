@@ -8,6 +8,7 @@ pipeline {
             steps {
                 git 'https://github.com/SergiANGU/calculator-rest-api'
                 sh './mvnw clean compile'
+
                 // bat '.\\mvnw clean compile'
             }
         }
